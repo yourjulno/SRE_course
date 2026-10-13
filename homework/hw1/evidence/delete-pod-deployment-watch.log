@@ -1,0 +1,6 @@
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE
+hello   3/3     3            3           5m30s
+hello   2/3     2            2           5m48s
+hello   2/3     3            2           5m48s
+hello   3/3     3            3           5m51s
+hello   3/3     3            3           5m53s

@@ -1,0 +1,16 @@
+NAME                    READY   STATUS    RESTARTS   AGE
+hello-d6759dd5f-5jggn   1/1     Running   0          5m30s
+hello-d6759dd5f-65wxf   1/1     Running   0          5m30s
+hello-d6759dd5f-wzt5f   1/1     Running   0          5m30s
+hello-d6759dd5f-65wxf   1/1     Terminating   0          5m48s
+hello-d6759dd5f-kzhx5   0/1     Pending       0          0s
+hello-d6759dd5f-65wxf   1/1     Terminating   0          5m48s
+hello-d6759dd5f-kzhx5   0/1     Pending       0          0s
+hello-d6759dd5f-kzhx5   0/1     ContainerCreating   0          0s
+hello-d6759dd5f-kzhx5   0/1     ContainerCreating   0          1s
+hello-d6759dd5f-kzhx5   0/1     Running             0          1s
+hello-d6759dd5f-kzhx5   1/1     Running             0          3s
+hello-d6759dd5f-kzhx5   1/1     Running             0          3s
+hello-d6759dd5f-65wxf   0/1     Completed           0          5m53s
+hello-d6759dd5f-65wxf   0/1     Completed           0          5m54s
+hello-d6759dd5f-65wxf   0/1     Completed           0          5m54s

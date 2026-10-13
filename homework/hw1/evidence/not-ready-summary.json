@@ -1,0 +1,30 @@
+{
+  "target": "hello-d6759dd5f-5jggn",
+  "total": 1800,
+  "statuses": {
+    "200": 1800
+  },
+  "not_ready_window_requests": 375,
+  "target_responses_in_window": 0,
+  "target_responses_after_restoration": 352,
+  "before": {
+    "uid": "deed50c4-63b3-45dc-a21b-3d4ad4b3f2f5",
+    "restarts": 0,
+    "endpoint_ready": true
+  },
+  "unready": {
+    "uid": "deed50c4-63b3-45dc-a21b-3d4ad4b3f2f5",
+    "restarts": 0,
+    "endpoint_ready": false
+  },
+  "restored": {
+    "uid": "deed50c4-63b3-45dc-a21b-3d4ad4b3f2f5",
+    "restarts": 0,
+    "endpoint_ready": true
+  },
+  "after": {
+    "uid": "deed50c4-63b3-45dc-a21b-3d4ad4b3f2f5",
+    "restarts": 0,
+    "endpoint_ready": true
+  }
+}

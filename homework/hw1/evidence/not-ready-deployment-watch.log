@@ -1,0 +1,4 @@
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE
+hello   3/3     3            3           12m
+hello   2/3     3            2           12m
+hello   3/3     3            3           13m

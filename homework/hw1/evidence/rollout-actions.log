@@ -1,0 +1,43 @@
+2026-10-13T16:08:42.960644+00:00 $ kubectl get deployment hello
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE
+hello   3/3     3            3           18m
+
+2026-10-13T16:08:43.066635+00:00 $ kubectl get pods -o wide
+NAME                    READY   STATUS    RESTARTS   AGE   IP           NODE                NOMINATED NODE   READINESS GATES
+hello-d6759dd5f-5jggn   1/1     Running   0          18m   10.244.0.7   hw1-control-plane   <none>           <none>
+hello-d6759dd5f-kzhx5   1/1     Running   0          12m   10.244.0.8   hw1-control-plane   <none>           <none>
+hello-d6759dd5f-wzt5f   1/1     Running   0          18m   10.244.0.6   hw1-control-plane   <none>           <none>
+
+2026-10-13T16:08:43.104256+00:00 $ kubectl get deployment hello -o jsonpath={.spec.template.spec.containers[0].image}
+hw1-hello:v1
+2026-10-13T16:08:43.137224+00:00 $ kubectl get deployment hello -o jsonpath={.spec.template.spec.containers[0].name}
+hello
+2026-10-13T16:09:01.181055+00:00 $ kubectl set image deployment/hello hello=hw1-hello:v2
+deployment.apps/hello image updated
+
+2026-10-13T16:09:01.243429+00:00 $ kubectl rollout status deployment/hello --timeout=90s
+Waiting for deployment "hello" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "hello" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "hello" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "hello" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "hello" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "hello" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "hello" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "hello" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "hello" rollout to finish: 1 old replicas are pending termination...
+deployment "hello" successfully rolled out
+
+2026-10-13T16:09:10.049188+00:00 $ kubectl get deployment hello
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE
+hello   3/3     3            3           18m
+
+2026-10-13T16:09:10.096580+00:00 $ kubectl get pods -o wide
+NAME                     READY   STATUS        RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+hello-59645cc658-d5lh4   1/1     Running       0          9s    10.244.0.10   hw1-control-plane   <none>           <none>
+hello-59645cc658-msrxd   1/1     Running       0          3s    10.244.0.12   hw1-control-plane   <none>           <none>
+hello-59645cc658-tp9bz   1/1     Running       0          6s    10.244.0.11   hw1-control-plane   <none>           <none>
+hello-d6759dd5f-kzhx5    1/1     Terminating   0          12m   10.244.0.8    hw1-control-plane   <none>           <none>
+hello-d6759dd5f-wzt5f    1/1     Terminating   0          18m   10.244.0.6    hw1-control-plane   <none>           <none>
+
+2026-10-13T16:09:10.131681+00:00 $ curl --fail --silent --show-error --max-time 2 http://localhost:8080/
+{"message": "hello", "version": "v1", "pod": "hello-d6759dd5f-wzt5f"}

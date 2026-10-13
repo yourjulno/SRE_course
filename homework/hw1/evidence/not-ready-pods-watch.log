@@ -1,0 +1,6 @@
+NAME                    READY   STATUS    RESTARTS   AGE
+hello-d6759dd5f-5jggn   1/1     Running   0          12m
+hello-d6759dd5f-kzhx5   1/1     Running   0          6m29s
+hello-d6759dd5f-wzt5f   1/1     Running   0          12m
+hello-d6759dd5f-5jggn   0/1     Running   0          12m
+hello-d6759dd5f-5jggn   1/1     Running   0          13m

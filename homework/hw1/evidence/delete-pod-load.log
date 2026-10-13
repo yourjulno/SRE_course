@@ -1,0 +1,17 @@
+{
+  "total": 1800,
+  "errors": 0,
+  "kinds": {
+    "ok": 1800
+  },
+  "versions": {
+    "v1": 1800
+  },
+  "pods": {
+    "hello-d6759dd5f-65wxf": 91,
+    "hello-d6759dd5f-5jggn": 614,
+    "hello-d6759dd5f-wzt5f": 582,
+    "hello-d6759dd5f-kzhx5": 513
+  },
+  "csv": "evidence/delete-pod.csv"
+}

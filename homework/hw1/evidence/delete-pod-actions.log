@@ -1,0 +1,26 @@
+2026-10-13T15:56:24.627054+00:00
+$ kubectl get pods
+NAME                    READY   STATUS    RESTARTS   AGE
+hello-d6759dd5f-5jggn   1/1     Running   0          5m48s
+hello-d6759dd5f-65wxf   1/1     Running   0          5m48s
+hello-d6759dd5f-wzt5f   1/1     Running   0          5m48s
+2026-10-13T15:56:30.236947+00:00
+$ kubectl delete pod hello-d6759dd5f-65wxf
+pod "hello-d6759dd5f-65wxf" deleted from default namespace
+2026-10-13T15:56:30.288427+00:00
+$ kubectl rollout status deployment/hello --timeout=90s
+deployment "hello" successfully rolled out
+2026-10-13T15:56:30.323555+00:00
+$ kubectl get deployment hello
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE
+hello   3/3     3            3           5m54s
+2026-10-13T15:56:30.354496+00:00
+$ kubectl get pods -o wide
+NAME                    READY   STATUS    RESTARTS   AGE     IP           NODE                NOMINATED NODE   READINESS GATES
+hello-d6759dd5f-5jggn   1/1     Running   0          5m54s   10.244.0.7   hw1-control-plane   <none>           <none>
+hello-d6759dd5f-kzhx5   1/1     Running   0          6s      10.244.0.8   hw1-control-plane   <none>           <none>
+hello-d6759dd5f-wzt5f   1/1     Running   0          5m54s   10.244.0.6   hw1-control-plane   <none>           <none>
+2026-10-13T15:56:30.383788+00:00
+$ kubectl get endpointslice -l kubernetes.io/service-name=hello
+NAME          ADDRESSTYPE   PORTS   ENDPOINTS                          AGE
+hello-pz78p   IPv4          8080    10.244.0.6,10.244.0.7,10.244.0.8   5m54s

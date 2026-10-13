@@ -1,0 +1,20 @@
+{
+  "total": 1800,
+  "errors": 0,
+  "kinds": {
+    "ok": 1800
+  },
+  "versions": {
+    "v1": 355,
+    "v2": 1445
+  },
+  "pods": {
+    "hello-d6759dd5f-5jggn": 102,
+    "hello-d6759dd5f-kzhx5": 136,
+    "hello-d6759dd5f-wzt5f": 117,
+    "hello-59645cc658-d5lh4": 503,
+    "hello-59645cc658-tp9bz": 501,
+    "hello-59645cc658-msrxd": 441
+  },
+  "csv": "evidence/rollout.csv"
+}

@@ -1,0 +1,61 @@
+{
+  "last_v1": [
+    {
+      "id": "374",
+      "timestamp": "1791907749.203",
+      "latency_ms": "1.99",
+      "kind": "ok",
+      "status": "200",
+      "version": "v1",
+      "pod": "hello-d6759dd5f-wzt5f"
+    },
+    {
+      "id": "383",
+      "timestamp": "1791907749.802",
+      "latency_ms": "9.76",
+      "kind": "ok",
+      "status": "200",
+      "version": "v1",
+      "pod": "hello-d6759dd5f-wzt5f"
+    },
+    {
+      "id": "384",
+      "timestamp": "1791907749.87",
+      "latency_ms": "5.36",
+      "kind": "ok",
+      "status": "200",
+      "version": "v1",
+      "pod": "hello-d6759dd5f-wzt5f"
+    }
+  ],
+  "first_v2": [
+    {
+      "id": "304",
+      "timestamp": "1791907744.539",
+      "latency_ms": "2.07",
+      "kind": "ok",
+      "status": "200",
+      "version": "v2",
+      "pod": "hello-59645cc658-d5lh4"
+    },
+    {
+      "id": "317",
+      "timestamp": "1791907745.407",
+      "latency_ms": "3.25",
+      "kind": "ok",
+      "status": "200",
+      "version": "v2",
+      "pod": "hello-59645cc658-d5lh4"
+    },
+    {
+      "id": "319",
+      "timestamp": "1791907745.539",
+      "latency_ms": "2.54",
+      "kind": "ok",
+      "status": "200",
+      "version": "v2",
+      "pod": "hello-59645cc658-d5lh4"
+    }
+  ],
+  "overlap_seconds": 5.331
+}
